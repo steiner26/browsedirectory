@@ -8,20 +8,6 @@ import java.util.Scanner;
 
 public class PrintDirectory {
 
-	public static void main(String[] args) throws IOException {
-		Scanner reader = new Scanner(System.in);
-		System.out.print("Enter path of folder: ");
-		String path = reader.nextLine();
-		final File folder = new File(path);
-		try {
-			toCSV(folder);
-			toTXT(folder);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		reader.close();
-	}
-
 	public static void toCSV(final File folder) throws IOException {
 		File file = new File("/Users/" + System.getProperty("user.name") + "/" + folder.getName() + ".csv");
 		file.createNewFile();
